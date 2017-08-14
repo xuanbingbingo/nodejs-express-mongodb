@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <input type="file" id="fileUpload">
+    <button id="submit">点击上传文件</button>
+  </body>
+</html>
+<!--<script src="javascripts/jquery-3.2.1.min.js"></script>-->
+<script>
+  //原生ajax请求
+//  function formatParams(data) {
+//    var arr = [];
+//    for (var name in data) {
+//      arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
+//    }
+//    arr.push(("v=" + Math.random()).replace(".",""));
+//    return arr.join("&");
+//  }
+//  var xhr = new XMLHttpRequest();
+//  xhr.open('post','http://10.2.60.192:3000/postData',true);
+//  var option = {
+//    name: 'libin'
+//  }
+//  xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+//  xhr.send(formatParams(option));
+//  xhr.onreadystatechange = function(){
+//    if(xhr.readyState==4){
+//      if(xhr.status == 200){
+//        console.log(xhr.responseText);
+//      }
+//    }
+//  }
+
+////原生ajax上传文件
+//  document.getElementById('submit').onclick = function(){
+//    var file = document.getElementById('fileUpload').files[0];
+//
+//    var formData = new FormData();
+//
+//    formData.append('name','libin');
+//    formData.append('userFile',file);
+//
+//    var oFileBody = '<a id="a"><b id="b">hey!</b></a>'; // Blob对象包含的文件内容
+//    var oBlob = new Blob([oFileBody], { type: "text/xml"});
+//
+//    var oReq = new XMLHttpRequest();
+//
+//    oReq.open("POST", "http://localhost:3000/formUpload");
+//
+//    // 文件上传过程的回调
+//    oReq.upload.onprogress = function(e) {
+//      console.log((e.loaded/e.total)*100+'%')
+//    }
+//
+//    /**
+//     *   e.loaded 文件已经上传了的大小
+//     *   e.total  文件总大小
+//     e.loaded/e.total)*100+'%'  转化成比例；
+//     */
+//    // 文件上传完毕的回调
+//    oReq.upload.onloadend = function(e) {
+//      console.log('接收完成'+e.loaded+'/'+e.total);
+//    }
+//    oReq.send(formData);
+//  }
+
+
+  //通过jquery的ajax方法上传文件
+//  document.getElementById('submit').onclick = function(){
+//    var file = document.getElementById('fileUpload').files[0];
+//
+//    var formData = new FormData();
+//
+//    formData.append('name','libin');
+//    formData.append('userFile',file);
+//
+//    $.ajax({
+//      url: 'http://localhost:3000/formUpload',
+//      data: formData,
+//      contentType: false,
+//      processData: false,
+//      type: 'POST',
+//      success: function (result) {
+//        console.log(result);
+//      },
+//      error: function (err) {
+//        console.error(err);
+//      }
+//    });
+//
+//  }
+
+
+</script>
+
+<!--//用express-generator生成器的socket.io实例-->
+<!--<script src="/socket.io/socket.io.js"></script>-->
+<!--<script>-->
+  <!--var socket = io.connect('http://localhost:3000');-->
+  <!--socket.on('news', function (data) {-->
+    <!--console.log(data);-->
+    <!--socket.emit('my other event', { my: 'data' });-->
+  <!--});-->
+<!--</script>-->
