@@ -11,7 +11,7 @@
     <button id="submit">点击上传文件</button>
   </body>
 </html>
-<!--<script src="javascripts/jquery-3.2.1.min.js"></script>-->
+<script src="javascripts/jquery-3.2.1.min.js"></script>
 <script>
   //原生ajax请求
 //  function formatParams(data) {
@@ -96,6 +96,18 @@
 //
 //  }
 
+//post请求到mongoose
+$.ajax({
+    url: 'http://localhost:3000/mongoose',
+    data: 'name=libin',
+    type: 'POST',
+    success: function (result) {
+      console.log(result);
+    },
+    error: function (err) {
+      console.error(err);
+    }
+  });
 
 </script>
 

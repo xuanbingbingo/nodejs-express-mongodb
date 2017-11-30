@@ -18,6 +18,7 @@ var users = require('./routes/users');
 var getData = require('./routes/getData');
 var postData = require('./routes/postData');
 var formUpload = require('./routes/formUpload');
+var mongoose = require('./routes/mongoose');
 
 var app = express();
 
@@ -68,6 +69,7 @@ app.use('/users', users);
 app.get('/getData', getData);
 app.post('/postData', postData);
 app.post('/formUpload', formUpload);
+app.post('/mongoose', mongoose)
 
 
 // catch 404 and forward to error handler
